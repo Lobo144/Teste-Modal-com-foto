@@ -5,20 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Documento</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
     <button id="openModalBtn">Adicionar Documento</button>
 
     <!-- Modal -->
-    <div id="documentModal" class="modal">
+     <!--
+    ESSAS ERAM AS DUAS TAGS QUE ESTAVAM FAZENDO FUNCIONAR O NEGÓCIO DO ARQUIVO
+    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.png">
+    <div id="previewArea" class="preview-area"></div>
+    -->
+
+    <div id="editModal" class="modal">
         <div class="modal-content">
-            <span id="closeModalBtn" class="close">&times;</span>
-            <h2>Adicionar Documento</h2>
-            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.png">
+            <span class="close">&times;</span>
+            <h2 class="h2">Editar Documento</h2>
             <div id="previewArea" class="preview-area"></div>
+            <p class="p" id="documentTitleDisplay">Documento:  <span id="documentName">Nenhum</span></p>
+            <form class="Form" id="editForm">
+                <label class="title-titulo" for="docTitle">Título</label>
+                <input class="label-txt" type="text" id="docTitle" name="docTitle" required>
+
+                <label class="title-conteudo" for="docContent">Conteúdo</label>
+                <textarea class="label-txt" id="docContent" name="docContent" rows="4" required></textarea>
+
+                <label class="title-email" for="userEmail">Seu Email</label>
+                <input class="label-txt" type="email" id="userEmail" name="userEmail" required>
+
+                <label class="title-validade" for="validade"> Validade Alterada</label>
+                <input class="label-txt" type="date">
+
+                <button type="submit">Salvar</button>
+            </form>
         </div>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
